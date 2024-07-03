@@ -1,9 +1,9 @@
 import numpy as np
-import gym
+import gymnasium as gym
 
-# Initialize the gym environment
+# Initialize the gymnasium environment
 env = gym.make("Taxi-v3")
-state = env.reset()
+state, info = env.reset()
 
 # Initialize Q-table
 q_table = np.zeros([env.observation_space.n, env.action_space.n])
@@ -15,7 +15,7 @@ epsilon = 0.1  # Exploration rate
 
 # Training the agent
 for i in range(1000):
-    state = env.reset()
+    state, info = env.reset()
     epochs, penalties, reward = 0, 0, 0
     done = False
 
@@ -31,7 +31,7 @@ for i in range(1000):
         next_max = np.max(q_table[next_state])
 
         # Update Q-value for the current state
-        new_value = (1 - alpha) * old_value + alpha (reward + gamma next_max)
+        new_value = (1 - alpha) * old_value + alpha * (reward + gamma * next_max)
         q_table[state, action] = new_value
 
         state = next_state
@@ -44,7 +44,7 @@ total_epochs, total_penalties = 0, 0
 episodes = 100
 
 for _ in range(episodes):
-    state = env.reset()
+    state, info = env.reset()
     epochs, penalties, reward = 0, 0, 0
     done = False
 
