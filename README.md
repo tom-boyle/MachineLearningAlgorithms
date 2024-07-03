@@ -19,6 +19,6 @@ This repository contains various machine learning algorithms implemented in Pyth
 
 ## Getting Started
 
-To run any of the algorithms, navigate to the respective directory and execute the Python script. For example:
+To run any of the algorithms, navigate to the respective directory and execute the Python script. E.g.
 ```bash
 python SupervisedLearning/LinearRegression.py
